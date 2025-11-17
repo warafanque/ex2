@@ -127,7 +127,6 @@ END
 
 STRINGTABLE
 BEGIN
-    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
 END
 
 #endif    // English (United States) resources

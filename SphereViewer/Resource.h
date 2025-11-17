@@ -4,6 +4,7 @@
 //
 #define IDD_SPHEREVIEWER_DIALOG         102
 #define IDR_MAINFRAME                   128
+#define IDP_SOCKETS_INIT_FAILED         103
 #define IDC_BUTTON_ANIMATE              1000
 #define IDC_BUTTON_SAVE                 1001
 #define IDC_BUTTON_LOAD                 1002

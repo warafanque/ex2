@@ -278,7 +278,10 @@ void Sphere3D::Draw(CDC* pDC, CRect clientRect, bool useHiddenSurfaceRemoval) {
 }
 
 bool Sphere3D::SaveToFile(const CString& filename) {
-    std::ofstream file(filename, std::ios::out);
+    // Convert CString to std::string for file operations
+    CT2A pszConvertedAnsiString(filename);
+    std::string str(pszConvertedAnsiString);
+    std::ofstream file(str, std::ios::out);
     if (!file.is_open()) return false;
     
     // Write header
@@ -306,7 +309,10 @@ bool Sphere3D::SaveToFile(const CString& filename) {
 }
 
 bool Sphere3D::LoadFromFile(const CString& filename) {
-    std::ifstream file(filename, std::ios::in);
+    // Convert CString to std::string for file operations
+    CT2A pszConvertedAnsiString(filename);
+    std::string str(pszConvertedAnsiString);
+    std::ifstream file(str, std::ios::in);
     if (!file.is_open()) return false;
     
     vertices.clear();

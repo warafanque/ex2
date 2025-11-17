@@ -11,6 +11,7 @@
 #include <afxwin.h>
 #include <afxext.h>
 #include <afxdisp.h>
+#include <atlconv.h>
 
 #ifndef _AFX_NO_OLE_SUPPORT
 #include <afxdtctl.h>

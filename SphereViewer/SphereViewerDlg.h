@@ -1,7 +1,7 @@
 #pragma once
 #include "Sphere3D.h"
 
-class CSphereViewerDlg : public CDialogEx {
+class CSphereViewerDlg : public CDialog {
 public:
     CSphereViewerDlg(CWnd* pParent = nullptr);
 

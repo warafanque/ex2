@@ -23,6 +23,7 @@
 #include <vector>
 #include <cmath>
 #include <fstream>
+#include <string>
 #include <algorithm>
 
 #ifdef _UNICODE

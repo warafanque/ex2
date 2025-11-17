@@ -1,15 +1,14 @@
-#include "pch.h"
+﻿#include "pch.h"
 #include "framework.h"
 #include "SphereViewer.h"
 #include "SphereViewerDlg.h"
-#include "afxdialogex.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 CSphereViewerDlg::CSphereViewerDlg(CWnd* pParent)
-    : CDialogEx(IDD_SPHEREVIEWER_DIALOG, pParent),
+    : CDialog(IDD_SPHEREVIEWER_DIALOG, pParent),
       m_bAnimating(false),
       m_nTimer(0),
       m_bUseHiddenSurfaceRemoval(true) {
@@ -17,10 +16,10 @@ CSphereViewerDlg::CSphereViewerDlg(CWnd* pParent)
 }
 
 void CSphereViewerDlg::DoDataExchange(CDataExchange* pDX) {
-    CDialogEx::DoDataExchange(pDX);
+    CDialog::DoDataExchange(pDX);
 }
 
-BEGIN_MESSAGE_MAP(CSphereViewerDlg, CDialogEx)
+BEGIN_MESSAGE_MAP(CSphereViewerDlg, CDialog)
     ON_WM_PAINT()
     ON_WM_QUERYDRAGICON()
     ON_BN_CLICKED(IDC_BUTTON_ANIMATE, &CSphereViewerDlg::OnBnClickedButtonAnimate)
@@ -32,7 +31,7 @@ BEGIN_MESSAGE_MAP(CSphereViewerDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 BOOL CSphereViewerDlg::OnInitDialog() {
-    CDialogEx::OnInitDialog();
+    CDialog::OnInitDialog();
 
     SetIcon(m_hIcon, TRUE);
     SetIcon(m_hIcon, FALSE);
@@ -113,7 +112,7 @@ void CSphereViewerDlg::OnPaint() {
             pRenderWnd->ReleaseDC(pDC);
         }
         
-        CDialogEx::OnPaint();
+        CDialog::OnPaint();
     }
 }
 
@@ -216,7 +215,7 @@ void CSphereViewerDlg::OnTimer(UINT_PTR nIDEvent) {
         UpdateSphere();
     }
     
-    CDialogEx::OnTimer(nIDEvent);
+    CDialog::OnTimer(nIDEvent);
 }
 
 BOOL CSphereViewerDlg::OnEraseBkgnd(CDC* pDC) {
@@ -253,7 +252,7 @@ void CSphereViewerDlg::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
             break;
     }
     
-    CDialogEx::OnKeyDown(nChar, nRepCnt, nFlags);
+    CDialog::OnKeyDown(nChar, nRepCnt, nFlags);
 }
 
 void CSphereViewerDlg::UpdateSphere() {
@@ -268,5 +267,5 @@ BOOL CSphereViewerDlg::PreTranslateMessage(MSG* pMsg) {
         OnKeyDown((UINT)pMsg->wParam, LOWORD(pMsg->lParam), HIWORD(pMsg->lParam));
         return TRUE;
     }
-    return CDialogEx::PreTranslateMessage(pMsg);
+    return CDialog::PreTranslateMessage(pMsg);
 }

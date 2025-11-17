@@ -26,16 +26,9 @@ BOOL CSphereViewerApp::InitInstance() {
 
     AfxEnableControlContainer();
 
-    CShellManager *pShellManager = new CShellManager;
-    CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerWindows));
-
     CSphereViewerDlg dlg;
     m_pMainWnd = &dlg;
     INT_PTR nResponse = dlg.DoModal();
-
-    if (pShellManager != nullptr) {
-        delete pShellManager;
-    }
 
 #if !defined(_AFXDLL) && !defined(_AFX_NO_MFC_CONTROLS_IN_DIALOGS)
     ControlBarCleanUp();

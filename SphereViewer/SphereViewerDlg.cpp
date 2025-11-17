@@ -49,17 +49,17 @@ BOOL CSphereViewerDlg::OnInitDialog() {
     // Set button text
     CButton* pButton = (CButton*)GetDlgItem(IDC_BUTTON_ANIMATE);
     if (pButton) {
-        pButton->SetWindowText(_T("播放动画"));
+        pButton->SetWindowText(_T("Play Animation"));
     }
 
     pButton = (CButton*)GetDlgItem(IDC_BUTTON_SAVE);
     if (pButton) {
-        pButton->SetWindowText(_T("保存"));
+        pButton->SetWindowText(_T("Save"));
     }
 
     pButton = (CButton*)GetDlgItem(IDC_BUTTON_LOAD);
     if (pButton) {
-        pButton->SetWindowText(_T("加载"));
+        pButton->SetWindowText(_T("Load"));
     }
 
     return TRUE;
@@ -163,7 +163,7 @@ void CSphereViewerDlg::OnBnClickedButtonAnimate() {
         // Start animation
         m_nTimer = SetTimer(1, 50, nullptr); // 50ms = 20 FPS
         if (pButton) {
-            pButton->SetWindowText(_T("停止动画"));
+            pButton->SetWindowText(_T("Stop Animation"));
         }
     } else {
         // Stop animation
@@ -172,7 +172,7 @@ void CSphereViewerDlg::OnBnClickedButtonAnimate() {
             m_nTimer = 0;
         }
         if (pButton) {
-            pButton->SetWindowText(_T("播放动画"));
+            pButton->SetWindowText(_T("Play Animation"));
         }
     }
 }
@@ -185,9 +185,9 @@ void CSphereViewerDlg::OnBnClickedButtonSave() {
     if (dlg.DoModal() == IDOK) {
         CString filename = dlg.GetPathName();
         if (m_sphere.SaveToFile(filename)) {
-            MessageBox(_T("球体数据保存成功！"), _T("保存"), MB_OK | MB_ICONINFORMATION);
+            MessageBox(_T("Sphere data saved successfully!"), _T("Save"), MB_OK | MB_ICONINFORMATION);
         } else {
-            MessageBox(_T("球体数据保存失败！"), _T("错误"), MB_OK | MB_ICONERROR);
+            MessageBox(_T("Failed to save sphere data!"), _T("Error"), MB_OK | MB_ICONERROR);
         }
     }
 }
@@ -200,10 +200,10 @@ void CSphereViewerDlg::OnBnClickedButtonLoad() {
     if (dlg.DoModal() == IDOK) {
         CString filename = dlg.GetPathName();
         if (m_sphere.LoadFromFile(filename)) {
-            MessageBox(_T("球体数据加载成功！"), _T("加载"), MB_OK | MB_ICONINFORMATION);
+            MessageBox(_T("Sphere data loaded successfully!"), _T("Load"), MB_OK | MB_ICONINFORMATION);
             UpdateSphere();
         } else {
-            MessageBox(_T("球体数据加载失败！"), _T("错误"), MB_OK | MB_ICONERROR);
+            MessageBox(_T("Failed to load sphere data!"), _T("Error"), MB_OK | MB_ICONERROR);
         }
     }
 }

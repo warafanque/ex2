@@ -1,4 +1,4 @@
-// Microsoft Visual C++ generated resource script.
+﻿// Microsoft Visual C++ generated resource script.
 //
 #include "resource.h"
 
@@ -79,14 +79,14 @@ IDR_MAINFRAME           ICON                    "res\\SphereViewer.ico"
 IDD_SPHEREVIEWER_DIALOG DIALOGEX 0, 0, 480, 360
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
-CAPTION "3D球体查看器 - 使用方向键旋转球体"
+CAPTION "3D Sphere Viewer"
 FONT 9, "MS Shell Dlg", 0, 0, 0x1
 BEGIN
     CONTROL         "",IDC_STATIC_RENDER,"Static",SS_BLACKFRAME | WS_BORDER,7,7,466,300
-    PUSHBUTTON      "播放动画",IDC_BUTTON_ANIMATE,7,315,80,30
-    PUSHBUTTON      "保存",IDC_BUTTON_SAVE,95,315,80,30
-    PUSHBUTTON      "加载",IDC_BUTTON_LOAD,183,315,80,30
-    LTEXT           "顶点数: 0  面数: 0",IDC_STATIC,275,320,180,20
+    PUSHBUTTON      "Play Animation",IDC_BUTTON_ANIMATE,7,315,80,30
+    PUSHBUTTON      "Save",IDC_BUTTON_SAVE,95,315,80,30
+    PUSHBUTTON      "Load",IDC_BUTTON_LOAD,183,315,80,30
+    LTEXT           "Vertices: 0  Faces: 0",IDC_STATIC,275,320,180,20
 END
 
 
